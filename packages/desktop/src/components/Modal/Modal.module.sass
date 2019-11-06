@@ -1,0 +1,78 @@
+@import '../vars.sass'
+
+.overlay
+  position: fixed
+  top: 0px
+  left: 0px
+  right: 0px
+  bottom: 0px
+  z-index: 40
+  background-color: rgba(#111,.9)
+  // opacity: .5
+  // backdrop-filter: blur(10px)
+  padding: 72px 20px
+  overflow: auto
+  
+
+.modal
+  position: relative
+  max-width: 540px
+  margin: 0 auto
+  background: #333
+  border-radius: 10px
+  overflow: hidden
+  outline: none
+  box-shadow: 0 0 20px rgba(0,0,0,.1)
+  // backdrop-filter: blur(10px)
+
+.title
+  font-size: 24px
+  padding: 20px 32px
+  line-height: 32px
+  word-wrap: break-word
+
+.content
+  padding: 0 32px
+
+.actions
+  margin-top: 22px
+  background: var(--white)
+  padding: 20px 0
+  display: flex
+  justify-content: flex-end
+  align-items: flex-end
+
+  button
+    margin: 0 4px
+
+.footer
+  margin-right: auto
+
+.error,
+.success
+  display: flex
+  margin-top: 20px
+  padding: 24px 28px
+  color: #fff
+  + .actions
+    margin-top: 0
+
+.error
+  background-color: var(--salmon)
+
+.success
+  background-color: var(--soft-green)
+
+.successIcon
+  margin-right: 16px
+
+.closeIcon
+  position: absolute
+  right: 0
+  top: 0
+  padding: 20px
+  color: #fff
+  cursor: pointer
+
+  &:hover
+    opacity: .5

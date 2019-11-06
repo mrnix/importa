@@ -1,0 +1,56 @@
+.item
+  display: flex
+  border-radius: 10px
+  position: relative
+  width: 100%
+  vertical-align: top
+  align-items: center
+  justify-content: center
+  
+  &.dragging
+    opacity: .5
+
+.preview
+  display: flex
+  width: 90%
+  height: 90%
+  position: relative
+  justify-items: center
+  align-items: center
+
+.actions
+  position: absolute
+  bottom: 0
+  
+.thumb
+  vertical-align: top
+  background-size: contain
+  background-position: center
+  background-repeat: no-repeat
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+  overflow: hidden
+  border-radius: 2px
+
+.image
+  width: 100%
+  height: 100%
+  object-fit: contain
+    
+
+.folderThumb
+  width: 100%
+  height: 100%
+  .thumb 
+    width: 48%
+    height: 48%
+    margin: 1%
+    // background-size: cover
+    display: inline-block
+    position: relative
+
+  .image
+    object-fit: cover

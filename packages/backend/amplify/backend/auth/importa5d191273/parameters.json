@@ -1,0 +1,64 @@
+{
+    "identityPoolName": "importa5d191273_identitypool_5d191273",
+    "allowUnauthenticatedIdentities": true,
+    "resourceNameTruncated": "import5d191273",
+    "userPoolName": "importa5d191273_userpool_5d191273",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "userpoolClientLambdaRole": "import5d191273_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "resourceName": "importa5d191273",
+    "authSelections": "identityPoolAndUserPool",
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    },
+    "useDefault": "manual",
+    "hostedUI": false,
+    "usernameAttributes": [
+        "email"
+    ],
+    "triggers": "{}",
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": [],
+    "dependsOn": [],
+    "userPoolGroupList": [
+        "testing"
+    ],
+    "thirdPartyAuth": false,
+    "userPoolGroups": false,
+    "adminQueries": false
+}

@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "importa",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authimporta5d191273",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

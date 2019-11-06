@@ -1,0 +1,38 @@
+@import '../vars.sass'
+
+$height: 26px
+
+.children
+  padding: 0 0 0 12px
+
+.name
+  height: $height
+  line-height: $height
+
+  
+.link
+  color: #fff
+  opacity: .5
+  text-decoration: none
+ 
+.active
+  > .name 
+    .link
+      opacity: 1
+    .hit
+      opacity: 1
+
+  
+.hit
+  position: absolute
+  left: 0
+  height: $height
+  width: 100%
+  background: $azure
+  opacity: 0
+
+.text
+  position: relative
+
+
+  

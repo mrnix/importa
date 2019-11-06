@@ -1,0 +1,18 @@
+{
+  "name": "importa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.18.3"
+  },
+  "scripts": {
+    "main": "lerna run --scope desktop main --stream",
+    "ui": "lerna run --scope desktop ui --stream",
+    "start": "lerna run --scope web start --stream",
+    "build": "lerna run --scope web build --stream",
+    "pub": "lerna run --scope web publish --stream"
+  }
+}

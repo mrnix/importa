@@ -1,0 +1,12 @@
+# dependencies
+
+yarn-error.log
+dist/
+node_modules/
+
+# testing
+/coverage
+.DS_Store
+
+
+

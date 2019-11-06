@@ -1,0 +1,189 @@
+@import '../vars.sass'
+
+=createButtonIntent($intentClassName, $bgColor, $color: #fff)
+  &.#{$intentClassName}
+    background: $bgColor
+    color: $color
+    &:hover
+      color: $color
+      background: lighten($bgColor, 5%)
+    &:active
+      color: $color
+      background: darken($bgColor, 5%)
+      &:hover
+        color: $color
+    &.minimal
+      &.#{$intentClassName}
+        background: none
+        color: var(--azure)
+        &:hover
+          color: $bgColor
+          background: rgba($bgColor, .1)
+        &:active
+          color: $bgColor
+          background: rgba($bgColor, .15)
+          &:hover
+            color: $bgColor
+
+.button
+  position: relative
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  padding: 5px 10px
+  font-size: 14px
+  font-weight: 500
+  font-family: IBM Plex Sans, sans-serif
+  line-height: 20px
+  white-space: nowrap
+  vertical-align: middle
+  cursor: pointer
+  user-select: none
+  border-radius: 0.25em
+  border: none
+  box-shadow: none
+  appearance: none
+  height: 40px
+  min-width: 40px
+  outline: none
+  color: var(--bluish-grey)
+  text-decoration: none
+  background: var(--pale-blue)
+  transition: color 0.1s ease-in, background-color 0.1s ease-in
+  &:hover
+    color: var(--azure)
+    transition: none
+  &:active, &.active
+    color: var(--dark-blue-grey)
+    &:hover
+      color: var(--dark-blue-grey)
+  &:disabled,
+  &.disabled
+    pointer-events: none
+    opacity: .5
+    cursor: default
+  +createButtonIntent('primary', $azure)
+  +createButtonIntent('warning', $salmon)
+  +createButtonIntent('white', #ffffff, var(--dark-blue-grey))
+
+.minimal
+  background: none
+
+.none
+  .label
+    color: var(--bluish-grey)
+  &:hover
+    .label
+      color: var(--azure)
+  &:active
+    .label
+      color: var(--dark-blue-grey)
+
+.button:active, .active
+  color: var(--dark-blue-grey)
+  &:hover
+    color: var(--dark-blue-grey)
+
+.fat
+  padding-right: 24px
+  padding-left: 24px
+
+.active
+  cursor: default
+
+.rounded
+  border-radius: 20px
+  &:hover
+    background: var(--very-light-blue)
+  &:focus
+    outline: none
+
+.icon
+  display: inline-block
+  margin-right: 10px
+  flex-shring: 0
+  width: 20px
+  height: 20px
+  &:only-child
+    margin: 0
+  svg
+    height: 100%
+
+.label
+  display: inline-block
+
+.fill
+  display: flex
+
+.tiny
+  height: 28px
+  min-width: 28px
+  line-height: 16px
+  padding-top: 2px
+  padding-bottom: 2px
+  font-size: 13px
+
+.small
+  height: 32px
+  min-width: 32px
+  line-height: 18px
+  padding-top: 2px
+  padding-bottom: 2px
+  font-size: 13px
+
+.large
+  height: 50px
+  font-size: 13px
+  font-weight: 600
+  &.minimal
+    &.rounded
+      width: 40px
+      height: 40px
+      color: var(--light-blue-grey)
+      &:hover
+        color: var(--azure)
+  
+.tiny.rounded
+  width: 28px
+  height: 28px
+  
+.huge
+  height: 60px
+
+.cap
+  text-transform: uppercase
+  font-size: 13px
+  font-weight: 500
+
+.fat.cap
+  min-width: 110px
+
+.link
+  color: var(--azure)
+  padding: 0
+  font-weight: 400
+  .icon
+    color: var(--azure)
+
+.link.large
+  color: var(--dark-blue-grey)
+  font-size: 16px
+  padding: 0
+  font-weight: 500
+  .label
+    color: var(--dark-blue-grey)
+  .icon
+    color: var(--azure)
+  &:hover
+    .label
+      color: var(--azure) 
+  &:active
+    .label
+      color: var(--dark-blue-grey)
+
+.elevated
+  box-shadow: inset 0 0 0 1px var(--pale-blue), 0 2px 4px 0 rgba(0, 0, 0, 0.1)
+  color: var(--azure)
+
+  &:hover, :global(.button-parent:hover) &
+    box-shadow: inset 0 0 0 1px var(--azure), 0 2px 4px 0 rgba(0, 0, 0, 0.1)
