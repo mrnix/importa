@@ -13,6 +13,7 @@
     "ui": "lerna run --scope desktop ui --stream",
     "start": "lerna run --scope web start --stream",
     "build": "lerna run --scope web build --stream",
-    "pub": "lerna run --scope web publish --stream"
+    "pub": "lerna run --scope web publish --stream",
+    "postinstall": "lerna bootstrap"
   }
 }
