@@ -12,7 +12,10 @@
         },
         "categories": {
             "auth": {
-                "importa5d191273": {}
+                "importa5d191273": {
+                    "googleClientId": "659419504208-4j24ifi9gc9r29m5e767jc9o2boi7tjg.apps.googleusercontent.com",
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"659419504208-4j24ifi9gc9r29m5e767jc9o2boi7tjg.apps.googleusercontent.com\",\"client_secret\":\"rGsYpUSTGtRP4_sJJhqJE1rt\"}]"
+                }
             }
         }
     }

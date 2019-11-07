@@ -14,3 +14,7 @@ The monorepo is powered by Lerna:
 - [packages/desktop](packages/web/) - Electron/React web app.
 - [packages/web](packages/web/) - React web app
 - [wip] packages/mobile -  React Native (Expo) app
+
+
+--- 
+© [Sergey Nikitin](https://nikitin.dev)

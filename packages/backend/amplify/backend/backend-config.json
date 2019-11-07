@@ -1,44 +1,44 @@
 {
-	"auth": {
-		"importa5d191273": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": []
-		}
-	},
-	"api": {
-		"importa": {
-			"service": "AppSync",
-			"providerPlugin": "awscloudformation",
-			"output": {
-				"authConfig": {
-					"additionalAuthenticationProviders": [
-						{
-							"authenticationType": "AMAZON_COGNITO_USER_POOLS",
-							"userPoolConfig": {
-								"userPoolId": "authimporta5d191273"
-							}
-						}
-					],
-					"defaultAuthentication": {
-						"authenticationType": "AWS_IAM"
-					}
-				}
-			}
-		}
-	},
-	"storage": {
-		"importa": {
-			"service": "S3",
-			"providerPlugin": "awscloudformation"
-		}
-	},
-	"analytics": {},
-	"hosting": {
-		"S3AndCloudFront": {
-			"service": "S3AndCloudFront",
-			"providerPlugin": "awscloudformation"
-		}
-	},
-	"function": {}
+    "auth": {
+        "importa5d191273": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": []
+        }
+    },
+    "api": {
+        "importa": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "authConfig": {
+                    "additionalAuthenticationProviders": [
+                        {
+                            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+                            "userPoolConfig": {
+                                "userPoolId": "authimporta5d191273"
+                            }
+                        }
+                    ],
+                    "defaultAuthentication": {
+                        "authenticationType": "AWS_IAM"
+                    }
+                }
+            }
+        }
+    },
+    "storage": {
+        "importa": {
+            "service": "S3",
+            "providerPlugin": "awscloudformation"
+        }
+    },
+    "analytics": {},
+    "hosting": {
+        "S3AndCloudFront": {
+            "service": "S3AndCloudFront",
+            "providerPlugin": "awscloudformation"
+        }
+    },
+    "function": {}
 }

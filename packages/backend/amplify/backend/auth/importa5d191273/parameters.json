@@ -21,7 +21,7 @@
         "email"
     ],
     "userpoolClientGenerateSecret": true,
-    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientRefreshTokenValidity": "365",
     "userpoolClientWriteAttributes": [
         "email"
     ],
@@ -45,7 +45,7 @@
         ]
     },
     "useDefault": "manual",
-    "hostedUI": false,
+    "hostedUI": true,
     "usernameAttributes": [
         "email"
     ],
@@ -55,10 +55,17 @@
     },
     "permissions": [],
     "dependsOn": [],
-    "userPoolGroupList": [
-        "testing"
-    ],
-    "thirdPartyAuth": false,
+    "userPoolGroupList": [],
+    "thirdPartyAuth": true,
     "userPoolGroups": false,
-    "adminQueries": false
+    "adminQueries": false,
+    "authProviders": [
+        "accounts.google.com"
+    ],
+    "hostedUIDomainName": "importa",
+    "authProvidersUserPool": [
+        "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/redirect/\"],\"LogoutURLs\":[\"http://localhost:3000/signout/\"]}"
 }

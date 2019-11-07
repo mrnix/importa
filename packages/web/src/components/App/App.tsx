@@ -7,6 +7,8 @@ import * as authActions from '../../store/auth/actions';
 import {connect} from 'react-redux';
 import {RootState} from '../../store';
 import ExportView from '../ExportView/ExportView';
+import Home from '../Home/Home';
+
 
 class App extends React.Component<any> {
   async componentDidMount() {
@@ -75,7 +77,7 @@ class App extends React.Component<any> {
         {ready && (
           <div className={styles.router}>
             <Router>
-              {/* <Home default /> */}
+              <Home default />
               <ExportView path="/w/:id" />
             </Router>
           </div>
