@@ -12,7 +12,7 @@ const queueFn = async ({fullPath, contentType, prefix}: any, next: any) => {
     );
     next(null, result);
   } catch (err) {
-    console.log(err);
+    console.error('upload failed', err);
     next(err);
   }
 };

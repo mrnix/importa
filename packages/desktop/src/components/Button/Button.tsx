@@ -69,7 +69,7 @@ class Button extends React.PureComponent<any> {
       <Komponent
         {...props}
         ref={registerRef}
-        disabled={disabled}
+        // disabled={disabled}
         className={finalClassName}
       >
         {icon && <span className={cx(styles.icon, classes.icon)}>{icon}</span>}

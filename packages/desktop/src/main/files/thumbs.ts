@@ -9,8 +9,6 @@ import {thumbCreated} from '../../common/store/data/actions';
 import {app} from 'electron';
 import {thumbSize} from '../../common/config';
 
-const devExpress = '//localhost:4040/userData';
-
 const processThumb = async ({fullPath, withInfo, size}: any) => {
   const hash = await md5File(fullPath);
   const dest = path.resolve(
@@ -18,7 +16,7 @@ const processThumb = async ({fullPath, withInfo, size}: any) => {
     `./thumbs/${size}/${hash}.jpg`
   );
 
-  console.log({fullPath, dest});
+  // console.log({fullPath, dest});
 
   if (await fs.pathExists(dest)) {
     return {

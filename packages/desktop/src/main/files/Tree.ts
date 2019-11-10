@@ -40,8 +40,6 @@ class Tree extends EventEmitter {
         path.join(app.getPath('userData'), `thumbs/${config.thumbSize}`)
       );
 
-      console.log(app.getPath('userData'));
-
       const {items} = store.getState().data;
 
       const add = ({fullPath, priority}: any) => {
@@ -111,17 +109,19 @@ class Tree extends EventEmitter {
               contentType: types.mime
             });
 
-            console.log({fullPath}, thumb);
+            // console.log({fullPath}, thumb);
 
             return {thumb, upload, types, meta};
           })
         );
 
-        const exportCreated = await API.graphql(
+        const exportCreated: any = await API.graphql(
           graphqlOperation(createExport, {input: {id}})
         );
 
-        const albumCreated = await API.graphql(
+        console.log({exportCreated});
+
+        const albumCreated: any = await API.graphql(
           graphqlOperation(createAlbum, {
             input: {
               name: payload.item.name,
@@ -132,6 +132,8 @@ class Tree extends EventEmitter {
           })
         );
 
+        console.log({albumCreated});
+
         await API.graphql(
           graphqlOperation(updateExport, {
             input: {id, exportAlbumId: albumCreated.data.createAlbum.id}
@@ -139,7 +141,7 @@ class Tree extends EventEmitter {
         );
 
         for (const {upload, types, thumb, meta} of result) {
-          console.log(thumb, meta);
+          console.log(upload.key);
 
           await API.graphql(
             graphqlOperation(createFile, {
@@ -155,13 +157,14 @@ class Tree extends EventEmitter {
           );
         }
 
-        const alb = await API.graphql(
+        const alb: any = await API.graphql(
           graphqlOperation(getAlbum, {
             id: albumCreated.data.createAlbum.id
           })
         );
 
         console.log(alb.data.getAlbum);
+
       } catch (err) {
         console.log('error', err);
       }

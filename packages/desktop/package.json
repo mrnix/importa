@@ -13,8 +13,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@aws-amplify/api": "^1.1.3",
-    "aws-amplify": "^1.1.40",
+    "aws-amplify": "^1.2.4",
     "better-queue": "^3.8.10",
     "directory-tree": "^2.2.1",
     "electron-redux": "^1.4.0",
@@ -33,6 +32,18 @@
     "sharp": "^0.23.2",
     "upath": "^1.2.0",
     "valid-filename": "^3.1.0"
+  },
+  "resolutions": {
+    "@aws-amplify/analytics": "1.3.2",
+    "@aws-amplify/api": "1.2.2",
+    "@aws-amplify/core": "1.2.4",
+    "@aws-amplify/cache": "1.1.2",
+    "@aws-amplify/pubsub": "1.2.2",
+    "@aws-amplify/auth": "1.4.2",
+    "@aws-amplify/interactions": "1.1.2",
+    "@aws-amplify/xr": "0.2.2",
+    "@aws-amplify/storage": "1.2.4",
+    "@aws-amplify/ui": "1.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

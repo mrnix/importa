@@ -15,5 +15,6 @@
     "build": "lerna run --scope web build --stream",
     "pub": "lerna run --scope web publish --stream",
     "postinstall": "lerna bootstrap"
-  }
+  },
+  "dependencies": {}
 }
