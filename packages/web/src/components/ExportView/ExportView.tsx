@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useCallback} from 'react';
-import {Storage, Auth} from 'aws-amplify';
+import Auth from '@aws-amplify/auth'
+import Storage from '@aws-amplify/storage'
 import API, {graphqlOperation} from '@aws-amplify/api';
 import {RouteComponentProps} from '@reach/router';
 import styles from './ExportView.module.sass';

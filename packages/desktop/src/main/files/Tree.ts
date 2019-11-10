@@ -2,11 +2,13 @@ import EventEmitter from 'events';
 import {keyBy} from 'lodash';
 import path from 'path';
 import fs from 'fs-extra';
-import {Auth} from 'aws-amplify';
+import Auth from '@aws-amplify/auth';
 import {app} from 'electron';
 import API, {graphqlOperation} from '@aws-amplify/api';
 import readChunk from 'read-chunk';
 import fileType from 'file-type';
+import nanoid from 'nanoid/async';
+import sharp from 'sharp';
 import {readTree} from './readTree';
 import {Items} from '../../common/store/data/reducer';
 import {store} from '../../common/store';
@@ -23,8 +25,6 @@ import {
   updateExport
 } from '../../../../backend/graphql/mutations';
 import {getAlbum} from '../../../../backend/graphql/queries';
-import nanoid from 'nanoid/async';
-import sharp from 'sharp';
 
 class Tree extends EventEmitter {
   async init({dir}: any) {
@@ -41,7 +41,7 @@ class Tree extends EventEmitter {
       );
 
       console.log(app.getPath('userData'));
-      
+
       const {items} = store.getState().data;
 
       const add = ({fullPath, priority}: any) => {

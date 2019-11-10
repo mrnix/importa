@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Router, navigate} from '@reach/router';
-import Amplify, {Hub} from 'aws-amplify';
+import Amplify, {Hub} from '@aws-amplify/core';
 import Auth from '@aws-amplify/auth';
 import {compose} from 'recompose';
 import {connect} from 'react-redux';
@@ -10,7 +10,6 @@ import Files from '../Files/Files';
 import DragDropProvider from './DragDropProvider';
 import events from '../../common/events';
 import * as authActions from '../../common/store/auth/actions';
-
 import {RootState} from '../../common/store';
 import {OAUTH_RESPONSE} from '../../common/store/auth/types';
 

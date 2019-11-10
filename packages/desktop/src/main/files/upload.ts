@@ -1,7 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
-
-import {Storage} from 'aws-amplify';
+import Storage from '@aws-amplify/storage';
 import Queue from 'better-queue';
 
 const queueFn = async ({fullPath, contentType, prefix}: any, next: any) => {

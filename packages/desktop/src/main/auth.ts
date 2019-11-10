@@ -1,4 +1,5 @@
-import Amplify, {Auth, Analytics} from 'aws-amplify';
+import Amplify from '@aws-amplify/core';
+import Auth from '@aws-amplify/auth';
 import events from '../common/events';
 import * as T from '../common/store/auth/types';
 import awsconfig from '../backend/aws-exports';
@@ -15,7 +16,6 @@ import {userReady} from '../common/store/auth/actions';
 export let user: CognitoUser | null = null;
 
 Amplify.configure(awsconfig);
-Analytics.disable();
 
 Auth.configure({
   identityPoolId: awsconfig.aws_cognito_identity_pool_id,
@@ -59,11 +59,6 @@ events.on(T.RECEIVE_USER, async ({payload}: any) => {
       Auth.authCallbacks(cognitoUser, resolve, reject).onSuccess(session);
     });
 
-
-    
-    
-
-    
     store.dispatch(userReady(user));
     console.log({t: Date.now() - t});
   } catch (e) {

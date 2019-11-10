@@ -1,14 +1,14 @@
 import * as React from 'react';
 import {Router} from '@reach/router';
-import Amplify, {Hub, Auth} from 'aws-amplify';
+import {connect} from 'react-redux';
+import Amplify, {Hub} from '@aws-amplify/core'
+import Auth from '@aws-amplify/auth'
 import {compose} from 'recompose';
 import styles from './App.module.sass';
 import * as authActions from '../../store/auth/actions';
-import {connect} from 'react-redux';
 import {RootState} from '../../store';
 import ExportView from '../ExportView/ExportView';
 import Home from '../Home/Home';
-
 
 class App extends React.Component<any> {
   async componentDidMount() {
