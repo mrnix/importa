@@ -25,7 +25,7 @@ export const getExport = `query GetExport($id: ID!) {
       id
       name
       identityId
-      files {
+      files(limit: 100) {
         items {
           id
           key
@@ -58,7 +58,7 @@ const ExportView = ({id}: ExportPageProps) => {
       try {
         const {identityId} = await Auth.currentCredentials();
         const response: any = await API.graphql(
-          graphqlOperation(getExport, {id})
+          graphqlOperation(getExport, {id, limit: 100})
         );
 
         console.log(identityId);
@@ -77,6 +77,7 @@ const ExportView = ({id}: ExportPageProps) => {
         const reviewsResponse: any = await API.graphql({
           query: listReviews,
           variables: {
+            
             filter: {
               identityId: {eq: identityId},
               or: ids.map((id: string) => ({fileId: {eq: id}}))

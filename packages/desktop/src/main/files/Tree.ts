@@ -119,8 +119,6 @@ class Tree extends EventEmitter {
           graphqlOperation(createExport, {input: {id}})
         );
 
-        console.log({exportCreated});
-
         const albumCreated: any = await API.graphql(
           graphqlOperation(createAlbum, {
             input: {
@@ -132,8 +130,6 @@ class Tree extends EventEmitter {
           })
         );
 
-        console.log({albumCreated});
-
         await API.graphql(
           graphqlOperation(updateExport, {
             input: {id, exportAlbumId: albumCreated.data.createAlbum.id}
@@ -141,20 +137,22 @@ class Tree extends EventEmitter {
         );
 
         for (const {upload, types, thumb, meta} of result) {
-          console.log(upload.key);
+          // console.log(JSON.stringify(meta), JSON.stringify(thumb.info));
 
           await API.graphql(
             graphqlOperation(createFile, {
               input: {
                 key: upload.key,
                 fileAlbumId: albumCreated.data.createAlbum.id,
-                mime: types.mime,
-                meta: JSON.stringify(meta),
-                thumb: JSON.stringify(thumb.info),
-                size: JSON.stringify(thumb.info)
+                mime: types.mime
+                // meta: {},
+                // thumb: {},
+                // size: {}
               }
             })
           );
+
+          console.log(upload.key);
         }
 
         const alb: any = await API.graphql(
@@ -164,7 +162,6 @@ class Tree extends EventEmitter {
         );
 
         console.log(alb.data.getAlbum);
-
       } catch (err) {
         console.log('error', err);
       }
