@@ -73,7 +73,7 @@
     "aws-amplify-react": "^2.5.2",
     "chokidar": "^3.2.0",
     "classnames": "^2.2.6",
-    "electron": "^7.0.0",
+    "electron": "^9.4.0",
     "electron-builder": "^21.2.0",
     "electron-rebuild": "^1.8.6",
     "electron-webpack": "^2.7.4",
